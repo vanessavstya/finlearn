@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Perikanan Budidaya Jakarta</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f6fa;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0.5rem 0;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        select {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dashboard Perikanan Budidaya DKI Jakarta</h1>
+        <p>Monitoring dan Analisis Data Produksi Perikanan</p>
+    </header>
+
+    <div class="container">
+        <div class="filters">
+            <select id="yearFilter">
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+            </select>
+            <select id="areaFilter">
+                <option value="all">Semua Wilayah</option>
+                <option value="jakut">Jakarta Utara</option>
+                <option value="jaksel">Jakarta Selatan</option>
+                <option value="jaktim">Jakarta Timur</option>
+                <option value="jakbar">Jakarta Barat</option>
+                <option value="jakpus">Jakarta Pusat</option>
+            </select>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card stat-card">
+                <div class="stat-value" id="totalProduction">25,430</div>
+                <div class="stat-label">Total Produksi (ton)</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-value" id="totalFarmers">1,250</div>
+                <div class="stat-label">Jumlah Pembudidaya</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-value" id="totalValue">Rp 127.2M</div>
+                <div class="stat-label">Nilai Produksi</div>
+            </div>
+
+            <div class="card full-width">
+                <h3>Tren Produksi Bulanan</h3>
+                <div class="chart-container">
+                    <canvas id="productionTrend"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Distribusi Jenis Budidaya</h3>
+                <div class="chart-container">
+                    <canvas id="farmingTypes"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Produksi per Wilayah</h3>
+                <div class="chart-container">
+                    <canvas id="areaProduction"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data simulasi
+        const monthlyData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nov', 'Des'],
+            production: [1200, 1350, 1400, 1300, 1450, 1500, 1550, 1600, 1650, 1700, 1750, 1800]
+        };
+
+        const farmingTypeData = {
+            labels: ['Kolam', 'Keramba', 'Tambak', 'KJA'],
+            data: [40, 25, 20, 15]
+        };
+
+        const areaData = {
+            labels: ['Jakarta Utara', 'Jakarta Selatan', 'Jakarta Timur', 'Jakarta Barat', 'Jakarta Pusat'],
+            data: [35, 15, 20, 18, 12]
+        };
+
+        // Inisialisasi grafik
+        const productionTrendChart = new Chart(
+            document.getElementById('productionTrend'),
+            {
+                type: 'line',
+                data: {
+                    labels: monthlyData.labels,
+                    datasets: [{
+                        label: 'Produksi Bulanan (ton)',
+                        data: monthlyData.production,
+                        borderColor: '#2980b9',
+                        tension: 0.3,
+                        fill: true,
+                        backgroundColor: 'rgba(41, 128, 185, 0.1)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    }
+                }
+            }
+        );
+
+        const farmingTypesChart = new Chart(
+            document.getElementById('farmingTypes'),
+            {
+                type: 'doughnut',
+                data: {
+                    labels: farmingTypeData.labels,
+                    datasets: [{
+                        data: farmingTypeData.data,
+                        backgroundColor: [
+                            '#2ecc71',
+                            '#3498db',
+                            '#9b59b6',
+                            '#f1c40f'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            }
+        );
+
+        const areaProductionChart = new Chart(
+            document.getElementById('areaProduction'),
+            {
+                type: 'bar',
+                data: {
+                    labels: areaData.labels,
+                    datasets: [{
+                        label: 'Produksi per Wilayah (%)',
+                        data: areaData.data,
+                        backgroundColor: '#3498db'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    }
+                }
+            }
+        );
+
+        // Event listeners untuk filter
+        document.getElementById('yearFilter').addEventListener('change', updateData);
+        document.getElementById('areaFilter').addEventListener('change', updateData);
+
+        function updateData() {
+            // Fungsi ini akan mengupdate data berdasarkan filter yang dipilih
+            // Dalam contoh ini menggunakan data statis
+            const year = document.getElementById('yearFilter').value;
+            const area = document.getElementById('areaFilter').value;
+
+            // Update statistik
+            // Dalam implementasi nyata, data akan diambil dari API atau database
+            document.getElementById('totalProduction').textContent = '25,430';
+            document.getElementById('totalFarmers').textContent = '1,250';
+            document.getElementById('totalValue').textContent = 'Rp 127.2M';
+
+            // Update grafik
+            productionTrendChart.update();
+            farmingTypesChart.update();
+            areaProductionChart.update();
+        }
+    </script>
+</body>
+</html>
