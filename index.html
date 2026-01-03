@@ -1,0 +1,594 @@
+<html class="scroll-smooth" lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   FINLEARN - Perikanan Budidaya Jakarta
+  </title>
+  <link rel="shortcut icon" href="https://icons.iconarchive.com/icons/klukeart/water/32/fish-icon.png">
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&amp;family=Poppins&amp;family=Quicksand&amp;family=Raleway&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Poppins', 'Quicksand', 'Raleway', sans-serif;
+      background-color: #f0f8ff; /* soft blue background */
+      color: #1e3a8a; /* berlin blue text */
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Scrollbar for swipe gallery */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Card hover effect */
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4),
+        0 4px 6px -2px rgba(59, 130, 246, 0.3);
+    }
+  </style>
+ </head>
+ <body class="bg-white">
+  <!-- Navbar -->
+  <nav class="bg-sky-200 border-b border-flax-blue-300 fixed w-full z-30 top-0 left-0 shadow-md">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+     <a class="text-3xl font-playfair text-berlin-blue font-semibold tracking-wide text-berlin-blue hover:text-sea-blue transition" href="#home">
+      FINLEARN
+     </a>
+     <div class="hidden md:flex space-x-8 font-semibold text-berlin-blue">
+      <a class="hover:text-sea-blue transition" href="#home">
+       Beranda
+      </a>
+      <a class="hover:text-sea-blue transition" href="#fish">
+       Jenis Ikan
+      </a>
+      <a class="hover:text-sea-blue transition" href="#data">
+       Visualisasi Data
+      </a>
+      <a class="hover:text-sea-blue transition" href="#about">
+       Tentang Kami
+      </a>
+      <a class="hover:text-sea-blue transition" href="#contact">
+       Kontak
+      </a>
+     </div>
+     <div class="md:hidden">
+      <button aria-label="Toggle menu" class="text-berlin-blue focus:outline-none focus:ring-2 focus:ring-sea-blue" id="menu-btn">
+       <i class="fas fa-bars fa-lg">
+       </i>
+      </button>
+     </div>
+    </div>
+   </div>
+   <div class="hidden md:hidden bg-sky-100 border-t border-flax-blue-300" id="mobile-menu">
+    <a class="block px-4 py-3 text-berlin-blue font-semibold hover:bg-sea-blue hover:text-white transition" href="#home">
+     Beranda
+    </a>
+    <a class="block px-4 py-3 text-berlin-blue font-semibold hover:bg-sea-blue hover:text-white transition" href="#fish">
+     Jenis Ikan
+    </a>
+    <a class="block px-4 py-3 text-berlin-blue font-semibold hover:bg-sea-blue hover:text-white transition" href="#data">
+     Visualisasi Data
+    </a>
+    <a class="block px-4 py-3 text-berlin-blue font-semibold hover:bg-sea-blue hover:text-white transition" href="#about">
+     Tentang Kami
+    </a>
+    <a class="block px-4 py-3 text-berlin-blue font-semibold hover:bg-sea-blue hover:text-white transition" href="#contact">
+     Kontak
+    </a>
+   </div>
+  </nav>
+  <main class="pt-20">
+   <!-- Hero Banner -->
+   <section class="relative bg-white" id="home">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-10">
+     <div class="md:w-1/2 text-center md:text-left">
+      <h1 class="text-4xl md:text-5xl font-playfair font-bold text-berlin-blue leading-tight mb-6">
+       Dari Kolam ke Konsumsi:
+       <br/>
+       Menelusuri Jejak Produksi Perikanan Jakarta
+      </h1>
+      <p class="text-sea-blue text-lg md:text-xl font-semibold mb-8 max-w-lg">
+       Jelajahi dunia ikan konsumsi dan budidaya di Jakarta dengan data, fakta menarik, dan visualisasi yang memukau.
+      </p>
+      <a class="inline-block bg-sky-200 text-berlin-blue px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-sky-600 transition" href="#data">
+      Lihat Data
+      </a>
+     </div>
+     <div class="md:w-1/2 relative">
+      <img alt="Pemandangan lautan tenang dengan perahu kecil, ikan lucu berenang di sekitar, bintang laut dan coral berwarna soft blue di dasar laut, latar belakang putih bersih" class="rounded-3xl shadow-lg w-full object-cover" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/277bdb5f-5074-4592-347c-70bb00d4c8e0.jpg" width="600"/>
+     </div>
+    </div>
+   </section>
+   
+  
+<!-- tryon slider -->
+<!-- Data Visualization Page -->
+<section class="max-w-7xl mx-auto px-6 py-16 bg-sky-50 rounded-3xl shadow-lg mb-16" id="data">
+  <h2 class="text-4xl font-playfair font-bold text-berlin-blue mb-12 text-center">
+    Visualisasi Data Produksi Perikanan Budidaya Jakarta
+  </h2>
+  <div class="flex flex-col md:flex-row gap-8">
+    <!-- Side Navigation -->
+    <nav class="md:w-1/5 bg-white rounded-2xl shadow-md p-6 sticky top-24 h-fit">
+      <ul class="space-y-4 font-semibold text-berlin-blue">
+        <li>
+          <button class="nav-btn w-full text-left px-4 py-2 rounded-lg hover:bg-sky-200 transition" data-slide="0" aria-current="true" type="button">
+            Dashboard Utama
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn w-full text-left px-4 py-2 rounded-lg hover:bg-sky-200 transition" data-slide="1" type="button">
+            Dashboard Jakarta Barat
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn w-full text-left px-4 py-2 rounded-lg hover:bg-sky-200 transition" data-slide="2" type="button">
+            Dashboard Jakarta Pusat
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn w-full text-left px-4 py-2 rounded-lg hover:bg-sky-200 transition" data-slide="3" type="button">
+            Dashboard Jakarta TImur
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn w-full text-left px-4 py-2 rounded-lg hover:bg-sky-200 transition" data-slide="4" type="button">
+            Dashboard Jakarta Utara
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn w-full text-left px-4 py-2 rounded-lg hover:bg-sky-200 transition" data-slide="5" type="button">
+            Dashboard Jakarta Selatan
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Slider Container -->
+    <div class="md:w-4/5 bg-white rounded-2xl shadow-md p-6 relative min-h-[850px]">
+      <!-- Slides -->
+      <div class="slider overflow-hidden relative">
+        <!-- Slide 0 Utama -->
+<div class="slide" data-index="0">
+  <div class='tableauPlaceholder' id='viz1756307489264' style='position: relative; width: 100%; height: 800px;'>
+    <noscript>
+      <a href='#'>
+        <img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/Vi/VisualisasiProduksiPerikananBudidayaJakarta/Dashboard1/1_rss.png' style='border: none; width: 100%; height: 800px;' />
+      </a>
+    </noscript>
+    <object class='tableauViz' style='display:none; width: 100%; height: 800px;'>
+      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+      <param name='embed_code_version' value='3' />
+      <param name='site_root' value='' />
+      <param name='name' value='VisualisasiProduksiPerikananBudidayaJakarta/Dashboard1' />
+      <param name='tabs' value='no' />
+      <param name='toolbar' value='yes' />
+      <param name='static_image' value='https://public.tableau.com/static/images/Vi/VisualisasiProduksiPerikananBudidayaJakarta/Dashboard1/1.png' />
+      <param name='animate_transition' value='yes' />
+      <param name='display_static_image' value='yes' />
+      <param name='display_spinner' value='yes' />
+      <param name='display_overlay' value='yes' />
+      <param name='display_count' value='yes' />
+      <param name='language' value='en-US' />
+    </object>
+  </div>
+</div>
+
+<!-- Slide 1 Jakarta Barat -->
+<div class="slide hidden" data-index="1">
+  <div class='tableauPlaceholder' id='viz1756347530838' style='position: relative; width: 100%; height: 800px;'>
+    <noscript>
+      <a href='#'>
+        <img alt='Dashboard Jakbar' src='https://public.tableau.com/static/images/Pr/ProduksiPerikananBudidayaJakartaBarat/DashboardJakbar/1_rss.png' style='border: none; width: 100%; height: 800px;' />
+      </a>
+    </noscript>
+    <object class='tableauViz' style='display:none; width: 100%; height: 800px;'>
+      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+      <param name='embed_code_version' value='3' />
+      <param name='site_root' value='' />
+      <param name='name' value='ProduksiPerikananBudidayaJakartaBarat/DashboardJakbar' />
+      <param name='tabs' value='no' />
+      <param name='toolbar' value='yes' />
+      <param name='static_image' value='https://public.tableau.com/static/images/Pr/ProduksiPerikananBudidayaJakartaBarat/DashboardJakbar/1.png' />
+      <param name='animate_transition' value='yes' />
+      <param name='display_static_image' value='yes' />
+      <param name='display_spinner' value='yes' />
+      <param name='display_overlay' value='yes' />
+      <param name='display_count' value='yes' />
+      <param name='language' value='en-US' />
+    </object>
+  </div>
+</div>
+
+<!-- Slide 2 Jakarta Pusat -->
+<div class="slide hidden" data-index="2">
+  <div class='tableauPlaceholder' id='viz1756347638227' style='position: relative; width: 100%; height: 800px;'>
+    <noscript>
+      <a href='#'>
+        <img alt='Dashboard Jakpus' src='https://public.tableau.com/static/images/Pr/ProduksiPerikananBudidayaJakartaPusat/DashboardJakpus/1_rss.png' style='border: none; width: 100%; height: 800px;' />
+      </a>
+    </noscript>
+    <object class='tableauViz' style='display:none; width: 100%; height: 800px;'>
+      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+      <param name='embed_code_version' value='3' />
+      <param name='site_root' value='' />
+      <param name='name' value='ProduksiPerikananBudidayaJakartaPusat/DashboardJakpus' />
+      <param name='tabs' value='no' />
+      <param name='toolbar' value='yes' />
+      <param name='static_image' value='https://public.tableau.com/static/images/Pr/ProduksiPerikananBudidayaJakartaPusat/DashboardJakpus/1.png' />
+      <param name='animate_transition' value='yes' />
+      <param name='display_static_image' value='yes' />
+      <param name='display_spinner' value='yes' />
+      <param name='display_overlay' value='yes' />
+      <param name='display_count' value='yes' />
+      <param name='language' value='en-US' />
+    </object>
+  </div>
+</div>
+
+<!-- Slide 3 Jakarta Timur -->
+<div class="slide hidden" data-index="3">
+  <div class='tableauPlaceholder' id='viz1756347698627' style='position: relative; width: 100%; height: 800px;'>
+    <noscript>
+      <a href='#'>
+        <img alt='Dashboard Jaktim' src='https://public.tableau.com/static/images/Pr/ProduksiPerikananBudidayaJakartaTimur/DashboardJaktim/1_rss.png' style='border: none; width: 100%; height: 800px;' />
+      </a>
+    </noscript>
+    <object class='tableauViz' style='display:none; width: 100%; height: 800px;'>
+      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+      <param name='embed_code_version' value='3' />
+      <param name='site_root' value='' />
+      <param name='name' value='ProduksiPerikananBudidayaJakartaTimur/DashboardJaktim' />
+      <param name='tabs' value='no' />
+      <param name='toolbar' value='yes' />
+      <param name='static_image' value='https://public.tableau.com/static/images/Pr/ProduksiPerikananBudidayaJakartaTimur/DashboardJaktim/1.png' />
+      <param name='animate_transition' value='yes' />
+      <param name='display_static_image' value='yes' />
+      <param name='display_spinner' value='yes' />
+      <param name='display_overlay' value='yes' />
+      <param name='display_count' value='yes' />
+      <param name='language' value='en-US' />
+    </object>
+  </div>
+</div>
+
+<!-- Slide 4 Jakarta Utara -->
+<div class="slide hidden" data-index="4">
+  <div class='tableauPlaceholder' id='viz1756347720956' style='position: relative; width: 100%; height: 800px;'>
+    <noscript>
+      <a href='#'>
+        <img alt='Dashboard Jakut' src='https://public.tableau.com/static/images/Pr/ProduksiPerikananBudidayaJakartaUtara/DashboardJakut/1_rss.png' style='border: none; width: 100%; height: 800px;' />
+      </a>
+    </noscript>
+    <object class='tableauViz' style='display:none; width: 100%; height: 800px;'>
+      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+      <param name='embed_code_version' value='3' />
+      <param name='site_root' value='' />
+      <param name='name' value='ProduksiPerikananBudidayaJakartaUtara/DashboardJakut' />
+      <param name='tabs' value='no' />
+      <param name='toolbar' value='yes' />
+      <param name='static_image' value='https://public.tableau.com/static/images/Pr/ProduksiPerikananBudidayaJakartaUtara/DashboardJakut/1.png' />
+      <param name='animate_transition' value='yes' />
+      <param name='display_static_image' value='yes' />
+      <param name='display_spinner' value='yes' />
+      <param name='display_overlay' value='yes' />
+      <param name='display_count' value='yes' />
+      <param name='language' value='en-US' />
+    </object>
+  </div>
+</div>
+<!-- Slide 5 Jakarta Selatan -->
+<div class="slide hidden" data-index="4">
+  <div class='tableauPlaceholder' id='viz1756347720956' style='position: relative; width: 100%; height: 800px;'>
+    <noscript>
+      <a href='#'>
+        <img alt='Dashboard Jaksel ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;ProduksiPerikananBudidayaJakartaSelatan&#47;DashboardJaksel&#47;1_rss.png' style='border: none' />
+    </noscript>
+    <object class='tableauViz' style='display:none; width: 100%; height: 800px;'>
+      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+      <param name='embed_code_version' value='3' />
+      <param name='site_root' value='' />
+      <param name='name' value='ProduksiPerikananBudidayaJakartaSelatan&#47;DashboardJaksel' />
+      <param name='tabs' value='no' />
+      <param name='toolbar' value='yes' />
+      <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;ProduksiPerikananBudidayaJakartaSelatan&#47;DashboardJaksel&#47;1.png' />
+      <param name='display_static_image' value='yes' />
+      <param name='display_spinner' value='yes' />
+      <param name='display_overlay' value='yes' />
+      <param name='display_count' value='yes' />
+      <param name='language' value='en-US' />
+    </object>
+  </div>
+</div>
+
+
+      <!-- Previous / Next Buttons -->
+      <button id="prevBtn" aria-label="Previous Slide" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-sky-200 text-berlin-blue rounded-full p-2 shadow hover:bg-sky-400 transition hidden md:block">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button id="nextBtn" aria-label="Next Slide" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-sky-200 text-berlin-blue rounded-full p-2 shadow hover:bg-sky-400 transition hidden md:block">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.slide');
+      const navButtons = document.querySelectorAll('.nav-btn');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('hidden', i !== index);
+        });
+        navButtons.forEach((btn, i) => {
+          btn.setAttribute('aria-current', i === index ? 'true' : 'false');
+          btn.classList.toggle('bg-sky-200', i === index);
+          btn.classList.toggle('font-bold', i === index);
+        });
+        currentIndex = index;
+      }
+
+      navButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const index = parseInt(btn.getAttribute('data-slide'));
+          showSlide(index);
+        });
+      });
+
+      prevBtn.addEventListener('click', () => {
+        showSlide(currentIndex - 1);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        showSlide(currentIndex + 1);
+      });
+
+      // Initialize first slide
+      showSlide(0);
+    });
+  </script>
+</section>
+
+
+<!-- tryon slider -->
+
+
+      <!--<p>
+       Data ini menunjukkan tren produksi ikan budidaya di Jakarta selama lima tahun terakhir. Produksi ikan konsumsi seperti nila, lele, dan gurame terus meningkat seiring dengan permintaan pasar yang tinggi. Visualisasi ini membantu memahami perkembangan sektor perikanan budidaya di wilayah metropolitan.
+      </p> -->
+
+      <!-- Fish Page -->
+   <section class="max-w-7xl mx-auto px-6 py-16" id="fish">
+    <h2 class="text-4xl font-playfair font-bold text-berlin-blue mb-12 text-center">
+     Jenis Ikan Konsumsi &amp; Hias di Jakarta
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+     <!-- Card 1 -->
+     <article aria-label="Ikan Nila, Oreochromis niloticus, jenis konsumsi" class="card-hover bg-white rounded-3xl shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 cursor-pointer" tabindex="0">
+      <img alt="Ikan nila hitam beren ang di kolam budidaya dengan air jernih dan latar belakang putih bersih" class="rounded-xl mb-4 w-full object-cover" height="200" loading="lazy" src="ikan nila.JPG" width="300"/>
+      <h3 class="text-2xl font-playfair font-semibold text-berlin-blue mb-1">
+       Ikan Nila
+      </h3>
+      <p class="italic text-sm text-sea-blue mb-2">
+       Oreochromis niloticus
+      </p>
+      <span class="inline-block bg-flax-blue text-berlin-blue text-xs font-semibold px-3 py-1 rounded-full">
+       Konsumsi
+      </span>
+     </article>
+     <!-- Card 2 -->
+     <article aria-label="Ikan Lele, Clarias batrachus, jenis konsumsi" class="card-hover bg-white rounded-3xl shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 cursor-pointer" tabindex="0">
+      <img alt="Ikan lele hitam beren ang di kolam budidaya dengan air jernih dan latar belakang putih bersih"class="rounded-xl mb-4 w-full object-cover" height="200" loading="lazy" src="ikan lele.JPG" width="300"/>
+      <h3 class="text-2xl font-playfair font-semibold text-berlin-blue mb-1">
+       Ikan Lele
+      </h3>
+      <p class="italic text-sm text-sea-blue mb-2">
+       Clarias batrachus
+      </p>
+      <span class="inline-block bg-flax-blue text-berlin-blue text-xs font-semibold px-3 py-1 rounded-full">
+       Konsumsi
+      </span>
+     </article>
+      <!-- Card 3 -->
+     <article aria-label="Ikan Gurame, Osphronemus goramy, jenis konsumsi" class="card-hover bg-white rounded-3xl shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 cursor-pointer" tabindex="0">
+      <img alt="Ikan gurame berenang di kolam budidaya dengan air jernih dan latar belakang soft blue" class="rounded-xl mb-4 w-full object-cover" height="200" loading="lazy" src="ikan gurame.JPG" width="300"/>
+      <h3 class="text-2xl font-playfair font-semibold text-berlin-blue mb-1">
+       Ikan Gurame
+      </h3>
+      <p class="italic text-sm text-sea-blue mb-2">
+       Osphronemus goramy
+      </p>
+      <span class="inline-block bg-flax-blue text-berlin-blue text-xs font-semibold px-3 py-1 rounded-full">
+       Konsumsi
+      </span>
+     </article>
+     <!-- Card 4 -->
+     <article aria-label="Ikan Mas, Cyprinus carpio, jenis konsumsi" class="card-hover bg-white rounded-3xl shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 cursor-pointer" tabindex="0">
+      <img alt="Ikan mas berwarna hitam berenang di akuarium dengan latar belakang putih dan coral kecil" class="rounded-xl mb-4 w-full object-cover" height="200" loading="lazy" src="ikan mas.JPG" width="300"/>
+      <h3 class="text-2xl font-playfair font-semibold text-berlin-blue mb-1">
+       Ikan Mas
+      </h3>
+      <p class="italic text-sm text-sea-blue mb-2">
+       Cyprinus carpio
+      </p>
+      <span class="inline-block bg-flax-blue text-berlin-blue text-xs font-semibold px-3 py-1 rounded-full">
+       Konsumsi
+      </span>
+     </article>
+     <!-- Card 3 -->
+     <article aria-label="Ikan Guppy, Poecilia reticulata, jenis hias" class="card-hover bg-white rounded-3xl shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 cursor-pointer" tabindex="0">
+      <img alt="Ikan guppy berwarna cerah berenang di akuarium dengan latar belakang soft blue dan coral kecil" class="rounded-xl mb-4 w-full object-cover" height="200" loading="lazy" src="ikan guppy.JPG" width="300"/>
+      <h3 class="text-2xl font-playfair font-semibold text-berlin-blue mb-1">
+       Ikan Guppy
+      </h3>
+      <p class="italic text-sm text-sea-blue mb-2">
+       Poecilia reticulata
+      </p>
+      <span class="inline-block bg-flax-blue text-berlin-blue text-xs font-semibold px-3 py-1 rounded-full">
+       Hias
+      </span>
+     </article>
+     <!-- Card 4 -->
+     <article aria-label="Ikan Koi, Cyprinus carpio, jenis hias" class="card-hover bg-white rounded-3xl shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 cursor-pointer" tabindex="0">
+      <img alt="Ikan koi berwarna merah dan putih berenang di kolam dengan latar belakang putih bersih dan tanaman air" class="rounded-xl mb-4 w-full object-cover" height="200" loading="lazy" src="ikan koi.JPG" width="300"/>
+      <h3 class="text-2xl font-playfair font-semibold text-berlin-blue mb-1">
+       Ikan Koi
+      </h3>
+      <p class="italic text-sm text-sea-blue mb-2">
+       Cyprinus carpio
+      </p>
+      <span class="inline-block bg-flax-blue text-berlin-blue text-xs font-semibold px-3 py-1 rounded-full">
+       Hias
+      </span>
+     </article>
+     <!-- Card 5 -->
+     <article aria-label="Ikan Louhan, Amphilophus hybrid, jenis hias" class="card-hover bg-white rounded-3xl shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 cursor-pointer" tabindex="0">
+      <img alt="Ikan bandeng berenang di kolam budidaya dengan air jernih dan latar belakang soft blue" class="rounded-xl mb-4 w-full object-cover" height="200" loading="lazy" src="ikan louhan.JPG" width="300"/>
+      <h3 class="text-2xl font-playfair font-semibold text-berlin-blue mb-1">
+       Ikan Louhan
+      </h3>
+      <p class="italic text-sm text-sea-blue mb-2">
+       Amphilophus hybrid
+      </p>
+      <span class="inline-block bg-flax-blue text-berlin-blue text-xs font-semibold px-3 py-1 rounded-full">
+       Hias
+      </span>
+     </article>
+     <!-- Card 6 -->
+     <article aria-label="Ikan Cupang, Betta splendens, jenis hias" class="card-hover bg-white rounded-3xl shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 cursor-pointer" tabindex="0">
+      <img alt="Ikan cupang merah berenang di akuarium dengan latar belakang putih dan tanaman air kecil" class="rounded-xl mb-4 w-full object-cover" height="200" loading="lazy" src="ikan cupang.JPG" width="300"/>
+      <h3 class="text-2xl font-playfair font-semibold text-berlin-blue mb-1">
+       Ikan Cupang
+      </h3>
+      <p class="italic text-sm text-sea-blue mb-2">
+       Betta splendens
+      </p>
+      <span class="inline-block bg-flax-blue text-berlin-blue text-xs font-semibold px-3 py-1 rounded-full">
+       Hias
+      </span>
+     </article>
+    
+    </div>
+   </section>
+
+     </div>
+    </div>
+   </section>
+   <!-- About Us Page -->
+   <section class="max-w-5xl mx-auto px-6 py-16" id="about">
+    <h2 class="text-4xl font-playfair font-bold text-berlin-blue mb-12 text-center">
+     Tentang Kami - FINLEARN
+    </h2>
+    <div class="bg-white rounded-3xl shadow-lg p-10 text-center text-sea-blue font-semibold space-y-6">
+     <p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+      FINLEARN adalah platform edukasi yang berfokus pada dunia perikanan budidaya di Jakarta. Kami berkomitmen untuk membawa Jakarta menyelam lebih dalam ke dunia data perikanan budidaya, menyediakan informasi yang akurat, menarik, dan mudah dipahami.
+     </p>
+     <div>
+      <h3 class="text-2xl font-playfair font-semibold mb-4 text-berlin-blue">
+       Visi
+      </h3>
+      <p class="max-w-xl mx-auto">
+       Menjadi sumber terpercaya informasi dan edukasi perikanan budidaya di Jakarta yang menginspirasi masyarakat untuk lebih peduli dan berkontribusi dalam pengembangan sektor perikanan.
+      </p>
+     </div>
+     <div>
+      <h3 class="text-2xl font-playfair font-semibold mb-4 text-berlin-blue">
+       Misi
+      </h3>
+      <ul class="list-disc list-inside max-w-xl mx-auto space-y-2">
+       <li>
+        Menyediakan data dan informasi yang akurat dan up-to-date tentang perikanan budidaya.
+       </li>
+       <li>
+        Menghadirkan konten edukatif yang menarik dan mudah dipahami.
+       </li>
+       <li>
+        Mendorong kolaborasi antara pelaku perikanan, akademisi, dan masyarakat.
+       </li>
+       <li>
+        Menggunakan teknologi untuk visualisasi data yang interaktif dan informatif.
+       </li>
+      </ul>
+     </div>
+    </div>
+   </section>
+   <!-- Contact Page -->
+   <section class="max-w-5xl mx-auto px-6 py-16 bg-sky-50 rounded-3xl shadow-lg mb-20" id="contact">
+    <h2 class="text-4xl font-playfair font-bold text-berlin-blue mb-12 text-center">
+     Kontak FINLEARN
+    </h2>
+    <div class="flex flex-col md:flex-row justify-center gap-16 text-berlin-blue font-semibold">
+     <div class="flex flex-col items-center md:items-start space-y-4">
+      <i class="fas fa-envelope fa-3x text-sea-blue mb-2">
+      </i>
+      <h3 class="text-2xl font-playfair mb-1">
+       Email
+      </h3>
+      <a class="text-sea-blue hover:underline text-lg" href="mailto:contact@finlearn.id">
+       contact@finlearn.id
+      </a>
+     </div>
+     <div class="flex flex-col items-center md:items-start space-y-4">
+      <i class="fas fa-phone fa-3x text-sea-blue mb-2">
+      </i>
+      <h3 class="text-2xl font-playfair mb-1">
+       Telepon
+      </h3>
+      <a class="text-sea-blue hover:underline text-lg" href="tel:+6281234567890">
+       +62 812-3456-7890
+      </a>
+     </div>
+     <div class="flex flex-col items-center md:items-start space-y-4">
+      <i class="fab fa-instagram fa-3x text-sea-blue mb-2">
+      </i>
+      <h3 class="text-2xl font-playfair mb-1">
+       Instagram
+      </h3>
+      <a class="text-sea-blue hover:underline text-lg" href="https://instagram.com/finlearn" rel="noopener" target="_blank">
+       @finlearn
+      </a>
+     </div>
+     <div class="flex flex-col items-center md:items-start space-y-4">
+      <i class="fab fa-tiktok fa-3x text-sea-blue mb-2">
+      </i>
+      <h3 class="text-2xl font-playfair mb-1">
+       TikTok
+      </h3>
+      <a class="text-sea-blue hover:underline text-lg" href="https://tiktok.com/@finlearn" rel="noopener" target="_blank">
+       @finlearn
+      </a>
+     </div>
+    </div>
+   </section>
+   
+  <footer class="bg-sky-200 border-t border-flax-blue-300 py-8 text-center text-berlin-blue font-semibold">
+   <p>
+    © 2024 FINLEARN. Semua hak cipta dilindungi.
+   </p>
+  </footer>
+  <script>
+   const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+ </body>
+</html>
